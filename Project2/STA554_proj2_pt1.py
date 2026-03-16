@@ -5,7 +5,7 @@ from pyspark.sql.types import *
 import pandas as pd
 
 class SparkDataCheck:
-    def __init__(self, df: Dataframe):
+    def __init__(self, df: DataFrame):
         self.df = df
         
     # Create classmethod to read in spark format csv    
@@ -170,17 +170,9 @@ class SparkDataCheck:
                 print(f" '{column2}' is not a string")
                 return None
 
-            result = (
-                self.df
-                .groupBy(column1, column2)
-                .count()
-            )
+            result = (self.df.groupBy(column1, column2).count())
 
         else:
-            result = (
-                self.df
-                .groupBy(column1)
-                .count()
-            )
+            result = (self.df.groupBy(column1).count())
 
         return result.toPandas()
