@@ -176,3 +176,26 @@ class SparkDataCheck:
             result = (self.df.groupBy(column1).count())
 
         return result.toPandas()
+    
+    # Return counts - boolean
+    def count_levels_bool(self, column1, column2=None):
+
+        dtype_dict = dict(self.df.dtypes)
+
+        # Check first column is string
+        if column1 not in dtype_dict or dtype_dict[column1] != "boolean":
+            print(f"'{column1}' is not boolean")
+            return None
+
+        # If second column check it too
+        if column2 is not None:
+            if column2 not in dtype_dict or dtype_dict[column2] != "boolean":
+                print(f" '{column2}' is not boolean")
+                return None
+
+            result = (self.df.groupBy(column1, column2).count())
+
+        else:
+            result = (self.df.groupBy(column1).count())
+
+        return result.toPandas()
