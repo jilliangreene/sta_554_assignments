@@ -6,4 +6,5 @@
 1. *Final.pdf* - assignment instructions
 2. *power_ml_data.csv* - initial data
 3. *power_streaming_data.csv* - data to stream in over time
-4. *STA554_FinalProj.ipynb* - Notebook submission
+4. *STA554_FinalProj.ipynb* - Model fit and streaming
+5. *DataGeneration.py* - Data streaming loop
