@@ -1,0 +1,1 @@
+This is a placeholder file. This is the folder where streaming data will be placed from the DataGeneration.py file.
